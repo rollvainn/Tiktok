@@ -16,6 +16,9 @@ int isFull(char grille[3][3]) {
 void logMove(){ 
 
 }
+void measuretime(){
+    
+}
 double playTurn(char grille[3][3], char joueur, FILE *fichier, int tour) { //la fonction renvoie un double en fin et permet d'effectuer la saisie et le blindage qui va avec
     int ligne, col;
     clock_t debut, fin; //type qui permet de contenir les valeurs renvoyes par clock()
@@ -90,7 +93,10 @@ int main() {
             break;
         }
 
-        joueur = (joueur == 'X') ? 'O' : 'X';
+        if (joueur == 'X')
+            joueur = 'O';
+        else
+           joueur = 'X';
         tour++;
     }
 
